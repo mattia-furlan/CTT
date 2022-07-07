@@ -2,7 +2,9 @@
 
 ## Compile
 
-`make`
+Requires GHC, Alex and Happy to compile.
+
+To compile, just type `make`
 
 ## Usage
 
@@ -11,3 +13,5 @@
 The program loads and type-checks the files, then it starts a REPL.
 
 Type `:help` to show usage.
+
+See the folder 'examples'.
