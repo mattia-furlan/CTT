@@ -102,3 +102,19 @@ B : I -> U ;
 b0 : B 0 ;
 transpCoupleEx : A * B 1 = transp ([i:I] A * B i) (a,b0) ;
 
+i : I ;
+j : I ;
+
+{-
+comp (I -> [i = 0 \/ i = 1](A * N)) (j = 0) 0
+    (I -> [j = 0 /\ i = 0 -> (a,S Z) | j = 0 /\ i = 1 -> (b, S (S Z))]) [i = 0 -> (a,Z) | i = 1 -> (b,S (S Z))] 1 ;
+-}
+{-
+[i = 0 -> a,Z | i = 1 -> b,S (S Z)]
+does not agree with
+[j = 0 -> [j = 0 /\ i = 0 -> a,S Z | j = 0 /\ i = 1 -> b,S (S Z)]]
+[j = 0 /\ i = 0 -> a,S Z | j = 0 /\ i = 1 -> b,S (S Z)]
+ on (j = 0)
+-}
+
+transp (I -> [i = 0 \/ i = 1](A * N)) [i = 0 -> (a,Z) | i = 1 -> (b,S Z)] ;

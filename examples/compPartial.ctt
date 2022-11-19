@@ -1,0 +1,29 @@
+--Path : [A : U] A -> A -> U =
+--    [A : U][a0 : A][a1 : A][i : I] [(i = 0) -> a0 | (i = 1) -> a1] A ;
+
+--refl : [A : U][a : A] Path A a a = [A : U][a : A][i : I] a ;
+
+
+A : U ;
+a : A ;
+
+
+--b : A ;
+
+transp : [F : I -> U] F 0 -> F 1 = [F : I -> U][a0 : F 0]
+    comp F () 0 (I -> []) a0 1 ;
+
+{-
+i : I ;
+
+
+transp (I -> [i = 0 \/ i = 1](A * N)) [i = 0 -> (a,Z) | i = 1 -> (b,S Z)] ;
+
+transp (I -> [i = 0 \/ i = 1]N) [i = 0 -> Z | i = 1 -> S Z] ;
+comp (I -> [i = 0 \/ i = 1]N) () 0 (I -> []) [i = 0 -> Z | i = 1 -> S Z] 1 ;
+-}
+
+transp ([i:I][i=0]A) a ;
+
+-- ii : I ;
+-- prova : [ii = 0 /\ ii = 1]A = transp ([i:I][i=0]A) a ;
